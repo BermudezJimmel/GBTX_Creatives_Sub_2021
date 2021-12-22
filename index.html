@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Globaltronics Creatives</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+  	<link rel="stylesheet" href="https://npmcdn.com/basscss@8.0.0/css/basscss.min.css">
+  	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css ">
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="stylesheet">
+
+
+  	
+
+
+
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+<style>
+	.modal,
+.modal-box {
+  z-index: 900;
+}
+
+.modal-sandbox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,.8);
+  overflow: auto;
+}
+
+.modal-box {
+  position:center;
+  width: 80%;
+  max-width: 920px;
+  margin: 100px auto;
+  animation-name: modalbox;
+  animation-duration: .4s;
+  animation-timing-function: cubic-bezier(0,0,.3,1.6);
+}
+
+.modal-header {
+  padding: 10px 20px;
+  background: #ec750d;
+  color: #ffffff;
+}
+
+.modal-body {
+  background: #ECEFF1;
+  padding: 10px 0px;
+}
+.modal h1{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Close Button */
+.close-modal {
+  text-align: right;
+  cursor: pointer;
+}
+
+/* Animation */
+@-webkit-keyframes modalbox {
+  0% {
+    top: -250px; 
+    opacity: 0;
+  }
+  100% {
+    top: 0; 
+    opacity: 1;
+  }
+}
+
+@keyframes modalbox {
+  0% {
+    top: -250px; 
+    opacity: 0;
+  }
+  100% {
+    top: 0; 
+    opacity: 1;
+  }
+}
+
+/* Aditional Styles */
+* {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.4em;
+}
+
+
+
+.modal-trigger, button {
+  top: 100%;
+  left: 100%;
+  padding: 20px 40px;
+  background: transparent;
+  color: #ffffff;
+  border: 0px solid #ffffff;
+  text-decoration: none;
+}
+
+.modal-trigger {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: ease .2s;
+}
+
+button {
+  border: 0px solid #fff;
+  outline: none;
+  color: #ec750d;
+}
+
+.modal-trigger:hover {
+  padding: 20px 60px;
+}
+</style>
+
+<style>
+.flicker {
+  width: 2px;
+  height: 3px;
+  box-shadow: 0 0 10px #fff;
+  position: absolute;
+  background: #fff;
+  animation: fall 3s;
+  opacity: 0;
+}
+
+@keyframes fall {
+  0% { opacity: 1; }
+  5% {
+    transform: translateY(20px) scale(1.5); 
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(0.2, 10) rotate(3600deg);
+    opacity: 0;
+  }
+}
+
+#portfolio {  
+    margin: 1rem 0;
+    -webkit-column-count: 3; 
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 1rem;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    -webkit-column-width: 33.33333333333333%;
+    -moz-column-width: 33.33333333333333%;
+    column-width: 33.33333333333333%;
+}
+.tile { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+
+}
+.tile:hover { 
+
+}
+
+.scale-anm {
+  transform: scale(1);
+}
+
+
+
+
+
+.tile img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  
+}
+
+
+
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: none;
+  border-color: var(--darken-2);
+  box-shadow: 0 0 0 3px var(--darken-3);
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*photobanner*/
+
+.photobanner {
+	height: 325px;
+	width: 5040px;
+	margin-bottom: 80px;
+}
+/*keyframe animations*/
+.first {
+	-webkit-animation: bannermove 50s linear infinite;
+	   -moz-animation: bannermove 50s linear infinite;
+	    -ms-animation: bannermove 50s linear infinite;
+	     -o-animation: bannermove 50s linear infinite;
+	        animation: bannermove 50s linear infinite;
+}
+
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -5746px;
+ }
+
+}
+
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5746px;
+ }
+
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5746px;
+ }
+
+}
+
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5746px;
+ }
+
+}
+
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -5746px;
+ }
+
+}
+.photobanner {
+	height: 325px;
+	width: 5040px;
+	margin-bottom: 80px;
+}
+
+.photobanner img {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.photobanner img:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+
+	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+#container {
+ width: 100%;
+ overflow: hidden;
+ margin: 50px auto;
+ background: transparent;
+}
+
+.pulse:hover, .pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+.pulse {
+  --color: #ef6eae;
+  --hover: #ec750d;
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+}
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+code {
+  color: #e4cb58;
+  font: inherit;
+}
+
+
+
+</style>
+
+
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+figure.snip1206 {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+}
+figure.snip1206 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+figure.snip1206 img {
+  opacity: 1;
+  width: 100%;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip1206:after {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  opacity: 0.75;
+  -webkit-transform: skew(-45deg) scaleX(0);
+  transform: skew(-45deg) scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+figure.snip1206 figcaption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+figure.snip1206 h2,
+figure.snip1206 p {
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+}
+figure.snip1206 h2 {
+  padding: 0 30px;
+  display: inline-block;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+figure.snip1206 p {
+  padding: 0 50px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+figure.snip1206 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+figure.snip1206:hover:after,
+figure.snip1206.hover:after {
+  -webkit-transform: skew(-45deg) scaleX(1);
+  transform: skew(-45deg) scaleX(1);
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+figure.snip1206:hover figcaption h2,
+figure.snip1206.hover figcaption h2,
+figure.snip1206:hover figcaption p,
+figure.snip1206.hover figcaption p {
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+figure.snip1206:hover figcaption h2,
+figure.snip1206.hover figcaption h2 {
+  opacity: 1;
+}
+figure.snip1206:hover figcaption p,
+figure.snip1206.hover figcaption p {
+  opacity: 0.7;
+}
+
+.social-icons {
+    margin: 0 auto;
+    /* You just need to change the width and height
+    of your div here.
+    The size of the images will adapt automatically.
+    Make sure that the width is 5 times the height
+    for better results.*/
+    width: 640px;
+    height: 128px;
+    position: relative;
+}
+
+
+.social-icons .social-icons-image {
+    display: inline-block;
+    position: absolute;
+    width: 33%;
+    height: auto;
+    z-index: 2;
+    opacity: 1;
+    transition: all .5s;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.social-icons .social-icons-image a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.social-icons img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.social-icons a:hover img {
+    width: 110%;
+    height: auto;
+    margin: -5%;
+}
+
+.social-icons .social-icons-image:nth-child(1) {
+    left: 33.755%;   /*(nth-child(2).left - (50% * 20%)/4)*/
+    top: 25%; /*((100%-50%)/2)*/
+    z-index: 0;
+    width: 10%; /*(50% * 20%)*/
+    height: auto;
+    opacity: .5;
+}
+
+
+.social-icons .social-icons-image:nth-child(2) {
+    left: 36.25%;   /*(40% - (75% * 20%)/4)*/
+    top: 12.5%; /*((100%-75%)/2)*/
+    z-index: 1;
+    width: 15%; /*(75% * 20%)*/
+    height: auto;
+    opacity: .75;
+}
+
+.social-icons .social-icons-image:nth-child(3) {
+    left: 40%;
+    z-index: 2;
+    width: 20%;
+    height: auto;
+}
+
+.social-icons .social-icons-image:nth-child(4) {
+    left: 48.75%; /*(60% - 3*(75% * 20%)/4*/
+    top: 12.5%; /*((100%-75%)/2)*/
+    z-index: 1;
+    width: 15%; /*(75% * 20%)*/
+    height: auto;
+    opacity: .75;
+}
+
+.social-icons .social-icons-image:nth-child(5) {
+    left: 56.25%;   /*(nth-child(4).left + (nth-child(4).width- 3*(50% * 20%)/4)*/
+    top: 25%; /*((100%-50%)/2)*/
+    z-index: 0;
+    width: 10%; /*(50% * 20%)*/
+    height: auto;
+    opacity: .5;
+}
+
+.social-icons:hover .social-icons-image:nth-child(1) {
+    top: 0px;
+    left: 0%;
+    width: 20%;
+    opacity: 1;
+}
+
+.social-icons:hover .social-icons-image:nth-child(2) {
+    top: 0px;
+    left: 20%;
+    width: 20%;
+    opacity: 1;
+}
+
+.social-icons:hover .social-icons-image:nth-child(4) {
+    top: 0px;
+    left: 60%;
+    width: 20%;
+    opacity: 1;
+}
+
+.social-icons:hover .social-icons-image:nth-child(5) {
+    top: 0px;
+    left: 80%;
+    width: 20%;
+    opacity: 1;
+}
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+ul.someclass {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+}
+ul.someclass li.someclass a {
+  display: block;
+  margin-left: -2px;
+  height: 60px;
+  width: 60px;
+  border-radius: 0 25px 25px 0;
+  border: 2px solid #000;
+  background: #fff;
+  margin-bottom: 1em;
+  transition: all 0.4s ease;
+  color: #2980b9;
+  text-decoration: none;
+  line-height: 60px;
+  position: relative;
+}
+ul.someclass li.someclass a:hover {
+  cursor: pointer;
+  width: 180px;
+  color: #fff;
+}
+ul.someclass li.someclass a:hover span {
+  left: 0;
+}
+ul.someclass li.someclass a span {
+  padding: 0 30px 0 15px;
+  position: absolute;
+  left: -135px;
+  transition: left 0.4s ease;
+}
+ul.someclass li.someclass a i {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+ul.someclass li.someclass .facebook {
+ background: rgba(34, 167, 240, .1);
+  border-color: #22a7f0;
+  color: #22a7f0;
+}
+ul.someclass li.someclass .facebook:hover {
+    background: rgba(34, 167, 240, 1);
+}
+ul.someclass li.someclass .youtube {
+  background: rgba(34, 167, 240, .1);
+  border-color: #22a7f0;
+  color: #22a7f0;
+}
+ul.someclass li.someclass .youtube:hover {
+   background: rgba(34, 167, 240, 1);
+}
+ul.someclass li.someclass .vimeo {
+  background: rgba(34, 167, 240, .1);
+  border-color: #22a7f0;
+  color: #22a7f0;
+}
+ul.someclass li.someclass .vimeo:hover {
+   background: rgba(34, 167, 240, 1);
+}
+ul.someclass li.someclass .twitter {
+ background: rgba(34, 167, 240, .1);
+  border-color: #22a7f0;
+  color: #22a7f0;
+}
+ul.someclass li.someclass .twitter:hover {
+   background: rgba(34, 167, 240, 1);
+}
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+
+
+div a:hover {
+  color: #d2527f;
+  border-color: #d2527f;
+}
+
+#content-desktop {display: block;}
+#content-mobile {display: none;}
+@media screen and (max-width: 768px) {
+#content-desktop {display: none;}
+#content-mobile {display: block;}
+
+
+
+#button.a {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button.a::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button.a:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button.a:active {
+  background-color: #555;
+}
+#button.a.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+</style>
+
+
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <!--<div class="header-logo">
+            <a class="site-logo" href="index.html">
+                <img src="" alt="Homepage">
+            </a>
+        </div>-->
+
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <div class="header-nav__content">
+                <h3>Navigation</h3>
+
+
+                
+                <ul class="header-nav__list" >
+                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
+                    <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                </ul>
+    
+                
+               
+        </div>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav>  <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+    <a id="button.a"></a>
+
+
+    <!-- home
+    ================================================== -->
+   
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+        
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+                
+        <div class="home-content">
+
+            <div class="row home-content_main" style="padding-top: 100px;" >
+
+                <h3>Welcome to Globaltronics Creatives</h3>
+
+                <h1>
+                    We are a group of creative <br>
+                    individuals empowering innovation<br>
+                    to craft influential brands <br>
+                    and digital experience
+                </h1>
+
+                <div class="home-content__buttons">
+                    <a href="#contact" class="smoothscroll btn btn--stroke">
+                        Start a Project
+                    </a>
+                    <a href="#about" class="smoothscroll btn btn--stroke">
+                        More About Us
+                    </a>
+                    <a href="#works" class="smoothscroll btn btn--stroke">
+                        See Our Works
+                    </a>
+                </div>
+
+            </div>
+
+            <!--<div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>-->
+
+            <!--<div class="home-content__line"></div>-->
+             <canvas id="c"></canvas>
+
+        </div> <!-- end home-content -->
+       
+  
+
+    
+        <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id='about' class="s-about">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">Hello There</h3>
+                <h1 class="display-1 display-1--light">We Are Globaltronics Creatives</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <justify><p>
+                Once upon a time, a bunch of young, creative, and talented individuals who were strangers to each other joined together and formed the Globaltronics Creative Team. Since then, these artists have conceptualized and crafted a wide variety of digital media content for different clients. They ensure the satisfaction of their clientele through employment of superb artistic skills, reliable technical know-how, and advance technology. 
+                </p></justify>
+                <p>
+               Simply put, Globaltronics Creative Team serves as the creative arm of Globaltronics, Inc., the one who’s in-charge of creating graphics for the company's LED Display Systems. They also offer other services such as flash design and print design. Composed of experienced graphic artists, the team shows off its works in which you can witness tasteful quality. Go check out their portfolio!
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
+
+        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+                
+            <div class="col-block stats__col ">
+                <div class="stats__count">500</div>
+                <h5>Projects Completed</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">300</div>
+                <h5>Happy Clients</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">1000</div>
+                <h5>Cups of Coffee</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">1000</div>
+                <h5>Overtime</h5> 
+            </div>
+
+        </div> <!-- end about-stats -->
+
+        <!--<div class="about__line"></div>-->
+
+    </section> <!-- end s-about -->
+
+
+    <!-- services
+    ================================================== -->
+    <section id='services' class="s-services">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What We Do</h3>
+                <h1 class="display-2">We’ve got what you need to launch and grow your business</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row services-list block-1-2 block-tab-full">
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-video"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">Motion Graphics</h3>
+                    <p>We specialize in creating motion graphics, which can attract the imagination of people. With high-impact designs, a glance can turn into a lingering and appreciative look.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+				width="64" height="64"
+				viewBox="0 0 224 224"
+				style=" fill:#000000;"><g xmlns="http://www.w3.org/2000/svg" font-family="none" font-size="none" font-weight="none" style="mix-blend-mode: normal" fill="none" fill-rule="nonzero" stroke="none" stroke-dasharray="" stroke-dashoffset="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-width="1" text-anchor="none"><path fill="none" d="M 0 224 v -224 h 224 v 224 Z" /><g fill="#ec750d"><g id="surface1"><path d="M 31.5 21 c -5.78319 0 -10.5 4.71681 -10.5 10.5 v 161 c 0 5.78305 4.71681 10.5 10.5 10.5 h 161 c 5.78305 0 10.5 -4.71695 10.5 -10.5 v -161 c 0 -5.78319 -4.71695 -10.5 -10.5 -10.5 Z M 31.5 28 h 161 c 1.9278 0 3.5 1.57227 3.5 3.5 v 161 c 0 1.9278 -1.5722 3.5 -3.5 3.5 h -161 c -1.92773 0 -3.5 -1.5722 -3.5 -3.5 v -161 c 0 -1.92773 1.57227 -3.5 3.5 -3.5 Z M 49 42 c -3.8556 0 -7 3.1444 -7 7 v 126 c 0 3.8556 3.1444 7 7 7 h 10.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 h -10.5 v -126 h 126 v 126 h -10.5 c -1.9278 0 -3.5 1.5722 -3.5 3.5 c 0 1.9278 1.5722 3.5 3.5 3.5 h 10.5 c 3.8556 0 7 -3.1444 7 -7 v -126 c 0 -3.8556 -3.1444 -7 -7 -7 Z M 80.5 77 c -1.9278 0 -3.5 1.5722 -3.5 3.5 v 63 c 0 1.9278 1.5722 3.5 3.5 3.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 v -31.5 h 17.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 h -17.5 v -21 h 24.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 Z M 129.5 84 c -1.9278 0 -3.5 1.5722 -3.5 3.5 v 45.5 c 0 7.7245 6.2755 14 14 14 c 1.9278 0 3.5 -1.5722 3.5 -3.5 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 c -3.8556 0 -7 -3.1444 -7 -7 v -45.5 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 Z M 77 168 c -1.9278 0 -3.5 1.5722 -3.5 3.5 v 7 c 0 1.9278 1.5722 3.5 3.5 3.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 v -7 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 Z M 94.5 168 c -1.9278 0 -3.5 1.5722 -3.5 3.5 v 7 c 0 1.9278 1.5722 3.5 3.5 3.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 v -7 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 Z M 112 168 c -1.9278 0 -3.5 1.5722 -3.5 3.5 v 7 c 0 1.9278 1.5722 3.5 3.5 3.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 v -7 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 Z M 129.5 168 c -1.9278 0 -3.5 1.5722 -3.5 3.5 v 7 c 0 1.9278 1.5722 3.5 3.5 3.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 v -7 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 Z M 147 168 c -1.9278 0 -3.5 1.5722 -3.5 3.5 v 7 c 0 1.9278 1.5722 3.5 3.5 3.5 c 1.9278 0 3.5 -1.5722 3.5 -3.5 v -7 c 0 -1.9278 -1.5722 -3.5 -3.5 -3.5 Z" /></g></g><path fill="none" d="M 112 224 c -61.8559 0 -112 -50.1441 -112 -112 v 0 c 0 -61.8559 50.1441 -112 112 -112 v 0 c 61.8559 0 112 50.1441 112 112 v 0 c 0 61.8559 -50.1441 112 -112 112 Z" /><path fill="none" d="M 112 215.04 c -56.9074 0 -103.04 -46.1326 -103.04 -103.04 v 0 c 0 -56.9074 46.1326 -103.04 103.04 -103.04 v 0 c 56.9074 0 103.04 46.1326 103.04 103.04 v 0 c 0 56.9074 -46.1326 103.04 -103.04 103.04 Z" /><path fill="none" d="M 112 224 c -61.8559 0 -112 -50.1441 -112 -112 v 0 c 0 -61.8559 50.1441 -112 112 -112 v 0 c 61.8559 0 112 50.1441 112 112 v 0 c 0 61.8559 -50.1441 112 -112 112 Z" /><path fill="none" d="M 112 215.04 c -56.9074 0 -103.04 -46.1326 -103.04 -103.04 v 0 c 0 -56.9074 46.1326 -103.04 103.04 -103.04 v 0 c 56.9074 0 103.04 46.1326 103.04 103.04 v 0 c 0 56.9074 -46.1326 103.04 -103.04 103.04 Z" /></g></svg></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">Flash Application</h3>
+                    <p> Animation is really possible with our key persons who are well-trained in using Flash Design. They’ll guarantee your website in a very appealing, engaging and interactive way. 
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-paint-brush"></i>
+                </div>  
+                <div class="service-text">
+                    <h3 class="h2">Prints</h3>
+                    <p>We are also reliable when it comes to print design. We can produce posters and other collateral materials which you might need in campaigns or events.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-paint-3d"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+					width="64" height="64"
+					viewBox="0 0 224 224"
+					style=" fill:#000000;"><g xmlns="http://www.w3.org/2000/svg" font-family="none" font-size="none" font-weight="none" style="mix-blend-mode: normal" fill="none" fill-rule="nonzero" stroke="none" stroke-dasharray="" stroke-dashoffset="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-width="1" text-anchor="none"><path fill="none" d="M 0 224 v -224 h 224 v 224 Z" /><g fill="#ec750d"><path d="M 94.5 14 c -14.2355 0 -26.0271 10.7219 -27.7606 24.5 h -7.2394 c -1.93292 0.00019 -3.49981 1.56708 -3.5 3.5 v 7 h -17.5 c -9.62332 0 -17.5 7.87675 -17.5 17.5 v 126 c 0 9.62325 7.87668 17.5 17.5 17.5 h 147 c 9.62325 0 17.5 -7.87675 17.5 -17.5 v -126 c 0 -9.62325 -7.87675 -17.5 -17.5 -17.5 h -4.00575 c -50.4826 -24.1881 -68.1961 -35 -86.9942 -35 Z M 94.5 21 c 14.3997 0 31.1483 8.73597 70.9093 28 h -81.4093 v -7 c -0.00019 -1.93292 -1.56708 -3.49981 -3.5 -3.5 h -6.6857 c 1.659 -9.95624 10.2421 -17.5 20.6857 -17.5 Z M 63 45.5 h 6.412 c 0.378 0.06248 0.7637 0.06248 1.1417 0 h 6.4463 v 31.5 h -6.45995 c -0.19649 -0.03288 -0.39543 -0.04892 -0.59465 -0.04795 c -0.16964 0.0037 -0.33879 0.01972 -0.5061 0.04795 h -6.4393 Z M 38.5 56 h 17.5 v 10.5 h -14 c -1.93292 0.00019 -3.49981 1.56708 -3.5 3.5 v 119 c 0.00019 1.93292 1.56708 3.49981 3.5 3.5 h 87.5 c 1.93292 -0.00019 3.49981 -1.56708 3.5 -3.5 v -17.3838 c 0 -5.8751 4.7131 -10.5476 10.5889 -10.5 c 0.01143 6e-005 0.02287 6e-005 0.0343 0 l 38.3904 -0.1162 c 1.92758 -0.00771 3.48617 -1.5724 3.48635 -3.5 v -87.5 c -0.00019 -1.93292 -1.56708 -3.49981 -3.5 -3.5 h -98 v -10.5 h 101.5 c 5.83975 0 10.5 4.66025 10.5 10.5 v 126 c 0 5.83975 -4.66025 10.5 -10.5 10.5 h -147 c -5.83968 0 -10.5 -4.66025 -10.5 -10.5 v -126 c 0 -5.83975 4.66032 -10.5 10.5 -10.5 Z M 45.5 73.5 h 10.5 v 7 c 0.00019 1.93292 1.56708 3.49981 3.5 3.5 h 7 v 3.5 c -0.01785 1.26223 0.64531 2.43628 1.73555 3.07261 c 1.09024 0.63632 2.43865 0.63632 3.52889 0 c 1.09024 -0.63632 1.75341 -1.81038 1.73555 -3.07261 v -3.5 h 7 c 1.93292 -0.00019 3.49981 -1.56708 3.5 -3.5 v -7 h 94.5 v 80.5136 l -34.8565 0.10255 c -9.6782 -0.0784 -17.6435 7.8211 -17.6435 17.5 v 13.8838 h -80.5 Z M 112.034 87.5 c -0.49109 -0.00562 -0.97787 0.09216 -1.4287 0.287 l -28 12.1338 c -0.13414 0.06011 -0.26437 0.12861 -0.3899 0.2051 c -0.01136 0.00682 -0.02267 0.0137 -0.03395 0.02065 c -0.90409 0.54785 -1.51216 1.47494 -1.65445 2.52245 c 0 0.00222 0 0.00443 0 0.00665 c -2e-005 0.00688 -2e-005 0.01377 0 0.02065 c -0.02837 0.2106 -0.03751 0.42334 -0.0273 0.6356 v 31.3155 c 0.00182 1.25992 0.6806 2.42165 1.7773 3.04185 l 28 15.8596 c 0.1432 0.07866 0.29173 0.14719 0.4445 0.2051 c 0.01129 0.00461 0.02261 0.00916 0.03395 0.01365 c 0.54013 0.20493 1.12258 0.27298 1.6954 0.1981 c 0.00455 1e-005 0.0091 1e-005 0.01365 0 c 0.11258 -0.01497 0.22436 -0.03541 0.33495 -0.06125 c 0.00233 0 0.00467 0 0.007 0 c 0.2233 -0.05377 0.44076 -0.12938 0.64925 -0.22575 c 0.06002 -0.02564 0.11931 -0.05295 0.1778 -0.0819 c 0.00234 -0.00233 0.00467 -0.00466 0.007 -0.007 l 28 -14.875 c 1.14338 -0.60692 1.85847 -1.79532 1.8592 -3.0898 v -32.334 c 0.0338 -0.75811 -0.17969 -1.50667 -0.6083 -2.1329 c -0.05796 -0.08469 -0.11962 -0.16678 -0.1848 -0.24605 c -0.00903 -0.01137 -0.01813 -0.02269 -0.0273 -0.03395 c -0.02028 -0.02079 -0.04081 -0.04132 -0.0616 -0.0616 c -0.13535 -0.15402 -0.28397 -0.29585 -0.44415 -0.42385 c -0.07928 -0.06506 -0.16137 -0.1266 -0.24605 -0.18445 c -0.01139 -0.00695 -0.02283 -0.01383 -0.0343 -0.02065 c -0.00221 -0.00234 -0.00443 -0.00467 -0.00665 -0.007 c -0.15699 -0.0995 -0.32167 -0.18635 -0.49245 -0.2597 l -28 -12.1338 c -0.42962 -0.18563 -0.89211 -0.28322 -1.3601 -0.287 Z M 112 94.8143 l 19.6875 8.53825 l -19.6875 9.7755 l -19.6875 -9.7755 Z M 87.5 108.78 l 21 10.4248 v 25.2861 l -21 -11.8877 Z M 136.5 108.78 v 24.739 l -21 11.1563 v -25.4706 Z M 59.5 164.5 c -1.932 0 -3.5 1.5645 -3.5 3.5 v 7 c 0 1.9355 1.568 3.5 3.5 3.5 c 1.932 0 3.5 -1.5645 3.5 -3.5 v -7 c 0 -1.9355 -1.568 -3.5 -3.5 -3.5 Z M 77 164.5 c -1.932 0 -3.5 1.5645 -3.5 3.5 v 7 c 0 1.9355 1.568 3.5 3.5 3.5 c 1.932 0 3.5 -1.5645 3.5 -3.5 v -7 c 0 -1.9355 -1.568 -3.5 -3.5 -3.5 Z M 94.5 164.5 c -1.932 0 -3.5 1.5645 -3.5 3.5 v 7 c 0 1.9355 1.568 3.5 3.5 3.5 c 1.932 0 3.5 -1.5645 3.5 -3.5 v -7 c 0 -1.9355 -1.568 -3.5 -3.5 -3.5 Z M 112 164.5 c -1.932 0 -3.5 1.5645 -3.5 3.5 v 7 c 0 1.9355 1.568 3.5 3.5 3.5 c 1.932 0 3.5 -1.5645 3.5 -3.5 v -7 c 0 -1.9355 -1.568 -3.5 -3.5 -3.5 Z M 147 171.5 c -1.93292 0.00019 -3.49981 1.56708 -3.5 3.5 v 14 c 0.00019 1.93292 1.56708 3.49981 3.5 3.5 h 35 c 1.93292 -0.00019 3.49981 -1.56708 3.5 -3.5 v -14 c -0.00019 -1.93292 -1.56708 -3.49981 -3.5 -3.5 Z M 150.5 178.5 h 28 v 7 h -28 Z" /></g></g></svg></i>
+                </div>  
+                <div class="service-text">
+                    <h3 class="h2">3D Design</h3>
+                    <p>Our multimedia artist possesses right qualities in creating three-dimensional models or visual of items with the help of different computer software programs and tools.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-web"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+					width="64" height="64"
+					viewBox="0 0 224 224"
+					style=" fill:#000000;"><g xmlns="http://www.w3.org/2000/svg" font-family="none" font-size="none" font-weight="none" style="mix-blend-mode: normal" fill="none" fill-rule="nonzero" stroke="none" stroke-dasharray="" stroke-dashoffset="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-width="1" text-anchor="none"><path fill="none" d="M 0 224 v -224 h 224 v 224 Z" /><g fill="#e67e22"><path d="M 112 18.6667 c -34.4587 0 -64.5351 18.816 -80.7005 46.6667 h 22.7864 c 8.4 -10.3787 19.3612 -18.5925 32.1198 -23.3151 c -2.92133 6.79467 -5.26269 14.7285 -7.05469 23.3151 h 19.1952 c 4.47067 -18.452 10.7324 -28 13.6537 -28 c 2.92133 0 9.18307 9.548 13.6537 28 h 19.1949 c -1.792 -8.58667 -4.14213 -16.5205 -7.05413 -23.3151 c 12.7493 4.72267 23.7197 12.9365 32.1197 23.3151 h 22.7864 c -16.1653 -27.8507 -46.242 -46.6667 -80.7007 -46.6667 Z M 9.33333 84 l 11.5938 56 h 12.2135 l 7.92969 -32.3932 l 7.91149 32.3932 h 12.1588 l 11.5938 -56 h -14.0365 l -5.01303 31.4085 l -7.45565 -31.4085 h -10.3907 l -7.47395 31.4636 l -4.95833 -31.4636 Z M 80.2995 84 l 11.5937 56 h 12.2136 l 7.9296 -32.3932 l 7.91187 32.3932 h 12.1585 l 11.5939 -56 h -14.0187 l -5.03067 31.4085 l -7.43773 -31.4085 h -10.4085 l -7.4564 31.4636 l -4.97653 -31.4636 Z M 151.265 84 l 11.5939 56 h 12.2136 l 7.9296 -32.3932 l 7.91187 32.3932 h 12.1585 l 11.5939 -56 h -14.0364 l -5.01293 31.4085 l -7.45547 -31.4085 h -10.3908 l -7.47413 31.4636 l -4.9588 -31.4636 Z M 31.2995 158.667 c 16.1653 27.8507 46.2418 46.6667 80.7005 46.6667 c 34.4587 0 64.5353 -18.816 80.7007 -46.6667 h -22.7864 c -8.4 10.3787 -19.3611 18.592 -32.1197 23.3147 c 2.912 -6.79467 5.2444 -14.728 7.0364 -23.3147 h -19.1959 c -4.47067 18.452 -10.7324 28 -13.6537 28 c -2.92133 0 -9.1644 -9.548 -13.6351 -28 h -19.1952 c 1.792 8.58667 4.14269 16.52 7.05469 23.3147 c -12.7493 -4.72267 -23.7198 -12.936 -32.1198 -23.3147 Z" /></g></g></svg></i>
+                </div>  
+                <div class="service-text">
+                    <h3 class="h2">Web Design</h3>
+                    <p>Having someone who’s creatively and technically inclined, these attributes are certain for us to build or redesign websites.
+                    </p>
+                </div>
+            </div>
+
+           
+
+        </div> <!-- end services-list -->
+
+    </section> <!-- end s-services -->
+
+
+    <!-- works
+    ================================================== -->
+    <section id='works' class="s-works">
+
+        <div class="intro-wrap" style="padding-top: 50px;" >
+                
+            <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up"style="margin-top: 90px" >
+                <div class="col-full"  >
+                    <h3 class="subhead" style="margin-top: -90px">Recent Works</h3>
+                    <h1 class="display-2 display-2--light">Check out some of our latest works</h1>
+                </div>
+            </div> <!-- end section-header -->
+
+        </div> <!-- end intro-wrap -->
+
+   
+        			
+  					
+						<div class="container" style="max-width: 1200px; float: none; margin: auto; margin-top: -150px;">   
+							<div class="toolbar mb2 mt2">
+							<div class="buttons">
+							  <center><button class="btn fil-cat pulse active"  href="" data-rel="all">All</button>
+							  <button class="btn fil-cat pulse " data-rel="motion">Motion Graphics</button>
+							  <button class="btn fil-cat pulse " data-rel="flash">Flash Application</button>
+							  <button class="btn fil-cat pulse " data-rel="prints">Prints</button>
+							  <button class="btn fil-cat pulse " data-rel="3d">3D Design</button>
+							  <button class="btn fil-cat pulse " data-rel="web">Web Design</button></center>
+							</div>
+							</div>
+
+							 
+							  
+							<div id="portfolio" data-aos="fade-up" >
+
+
+								<div class="tile scale-anm motion all" style="margin-top: -10px;">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/NDAA-2014.jpg" alt="" />
+							     	<figcaption>
+    								<h2>NDAA 2014</h2>
+									<p>Motion Graphics</p>
+									<a href="#" class="modal-trigger" data-modal="modal-name"></a>
+									</figcaption></figure>
+							  </div>
+
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2015/NDAA 2015.jpg" alt="" />
+							    	<figcaption>
+    								<h2>NDAA 2015</h2>
+									<p>Motion Graphics</p>
+									<a href="#" class="modal-trigger" data-modal="modal-name1"></a>
+									</figcaption></figure>
+							  </div>
+
+							    <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2016/03-30-16-2.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Easter Sunday</h2>
+									<p>Motion Graphics</p>
+									<a href="#" class="modal-trigger" data-modal="modal-name2"></a>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/Newyear - EBC.jpg" alt="" />
+							     <figcaption>
+    								<h2>New Year</h2>
+									<p>Motion Graphics</p>
+									<a href="#" class="modal-trigger" data-modal="modal-name3"></a>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014recreate-2014.jpg" alt="" />
+							     	<figcaption>
+    								<h2>NDAA 2014</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all" style="margin-top: -40px;">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/redefine-2014.jpg" alt="" />
+							     	<figcaption>
+    								<h2>NDAA 2014</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion" >
+							  <figure class="snip1206">
+							        <img src="images/work/motion/2014/chinese-new2014.jpg" width="auto" height="auto" alt=""  />
+							        <figcaption>
+    								<h2>Chinese New Year</h2>
+									<p>Motion Graphics</p>
+									</figcaption>
+							  </figure>
+							  </div>
+
+							  <div class="tile scale-anm motion">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/creatives-2014.jpg" alt="" width="auto" height="auto" />
+							    	<figcaption>
+    								<h2>Creatives Show Reel</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/easter.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Easter Sunday</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/father.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Fathers Day</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/good-friday.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Good Friday</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/independence.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Independence Day</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/labor.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Labor Day</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/teacher.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Teachers Day</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2014/valentines.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Valentines Day</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							 <div class="tile scale-anm motion">
+							 	<figure class="snip1206">
+							    <img src="images/work/motion/2015/01-19-16.jpg" alt="" />
+							    	<figcaption>
+    								<h2>NDAA 2015 Launch Party</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2015/01-20-16.jpg" alt="" />
+							    	<figcaption>
+    								<h2>NDAA Awarding Concert</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2015/01.11.15.jpg" alt="" />
+							    	<figcaption>
+    								<h2>All Saints Day</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2015/02.11.15.jpg" alt="" />
+							    	<figcaption>
+    								<h2>All Souls Day</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2015/game changer 2015.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Game Changer</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2015/halloween 2015.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Halloween</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2016/03-30-16-1.jpg" alt="" />
+							    	<figcaption>
+    								<h2>Chinese New Year</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+							
+
+							  <div class="tile scale-anm motion all">
+							  	<figure class="snip1206">
+							    <img src="images/work/motion/2016/03-30-16-3.jpg" alt="" />
+							    	<figcaption>
+    								<h2>NDAA 2014</h2>
+									<p>Motion Graphics</p>
+									</figcaption></figure>
+							  </div>
+
+
+							   <div class="tile scale-anm flash all" style="margin-top: -10px;">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/tanduay.jpg" alt=""  />
+							        <figcaption>
+    								<h2>Tanduay</h2>
+									<p>Flash Application</p>
+									<a href="#" class="modal-trigger" data-modal="modal-nametanduay"></a>
+									</figcaption></figure>
+							  </div>
+
+							   <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/novartis.png" alt="" />
+							        <figcaption>
+    								<h2>Novartis</h2>
+									<p>Flash Application</p>
+									<a href="#" class="modal-trigger" data-modal="modal-namenovartis"></a>
+									</figcaption></figure>
+							  </div>
+
+							   <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/PARC_Photobooth.png" alt="" />
+							        <figcaption>
+    								<h2>PARC Photobooth</h2>
+									<p>Flash Application</p>
+									<a href="#" class="modal-trigger" data-modal="modal-nameparcp"></a>
+									</figcaption></figure>
+							  </div>
+
+							   <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/smkidsfashion.png" alt="" />
+							        <figcaption>
+    								<h2>SM Kids Fashion</h2>
+									<p>Flash Application</p>
+									<a href="#" class="modal-trigger" data-modal="modal-namesmkids"></a>
+									</figcaption></figure>
+							  </div>
+
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/3GS BDO.PNG" alt="" />
+							        <figcaption>
+    								<h2>BDO</h2>
+									<p>Flash Application</p>
+									<a href="#" class="modal-trigger" data-modal="modal-nameBDO"></a>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/3GS Cardinal Santos.PNG" alt="" />
+							        <figcaption>
+    								<h2>Cardinal Santos</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/3GS Globe.PNG" alt="" />
+							        <figcaption>
+    								<h2>Globe</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/3GS MB.png" alt="" />
+							        <figcaption>
+    								<h2>Manila Bulletin</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/3GS Robinsons.PNG" alt="" />
+							        <figcaption>
+    								<h2>Robinsons</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/3GS Xavier.PNG" alt="" />
+							        <figcaption>
+    								<h2>XAVIER</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/annabell lee cafe.png" alt="" />
+							        <figcaption>
+    								<h2>Annabell Lee Cafe</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/Globaltronics Photobooth.png" alt="" />
+							        <figcaption>
+    								<h2>Globaltronics Photobooth</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/NDAA LAUNCH PART.png" alt="" />
+							        <figcaption>
+    								<h2>NDAA Launch Party</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm flash all">
+							  	<figure class="snip1206">
+							        <img src="images/work/flash/MSAP.png" alt="" />
+							        <figcaption>
+    								<h2>MSAP</h2>
+									<p>Flash Application</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm prints all" style="margin-top: -10px;">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/1.jpg" alt="" />
+							            <figcaption>
+    								<h2>Globaltronics 3GS Smart Kiosk</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm prints all">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/10.jpg" alt="" />
+							             <figcaption>
+    								<h2>NDAA 2015 Launch Party</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div> 
+
+							  <div class="tile scale-anm prints all">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/11.jpg" alt="" />
+							             <figcaption>
+    								<h2>NDAA 2015 Awarding Concert</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div> 
+
+							  <div class="tile scale-anm prints all">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/12.jpg" alt="" />
+							             <figcaption>
+    								<h2>NDAA 2013 Awards</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div> 
+
+							  <div class="tile scale-anm prints all">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/13.jpg" alt="" />
+							             <figcaption>
+    								<h2>NDAA 2015 Launch Party</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div> 
+
+							  <div class="tile scale-anm prints all">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/14.jpg" alt="" />
+							             <figcaption>
+    								<h2>NDAA 2015 Awarding Concert</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div> 
+
+							  <div class="tile scale-anm prints all">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/2.jpg" alt="" />
+							             <figcaption>
+    								<h2>3GS Smart Kiosk</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div>
+
+								<div class="tile scale-anm prints all ">
+									<figure class="snip1206">
+							            <img src="images/work/print/3.jpg" alt="" height="698" width="393" />
+							             <figcaption>
+    								<h2>Globaltronics</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div>
+
+							   
+
+							   <div class="tile scale-anm prints all ">
+							   	<figure class="snip1206">
+							            <img src="images/work/print/4.jpg" alt="" height="698" width="393" />
+							             <figcaption>
+    								<h2>Globaltronics Rear Projection Film</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div>
+							  
+
+							   <div class="tile scale-anm prints all ">
+							   	<figure class="snip1206">
+							            <img src="images/work/print/5.jpg" alt="" height="698" width="393"/>
+							             <figcaption>
+    								<h2>GS</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div> 
+
+							   <div class="tile scale-anm prints all ">
+							   	<figure class="snip1206">
+							            <img src="images/work/print/6.jpg" alt="" height="698" width="393"/>
+							             <figcaption>
+    								<h2>Global Green Lighting</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm prints all ">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/7.JPG" alt="" height="698" width="393"/>
+							             <figcaption>
+    								<h2>Mobile LED Display</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm prints all ">
+							  	<figure class="snip1206">
+							            <img src="images/work/print/8.jpg" alt="" height="698" width="393"/>
+							             <figcaption>
+    								<h2>Philips</h2>
+									<p>Prints</p>
+									</figcaption></figure>
+							  </div>
+
+
+							  <div class="tile scale-anm 3d all" style="margin-top: -15px;">
+							  	<figure class="snip1206">
+							      <img src="images/work/3d/clark.jpg" alt=""  />
+							       <figcaption>
+    								<h2>Globaltronics Clark Office</h2>
+									<p>3D Design</p>
+									</figcaption></figure>
+							  </div>
+
+                 <div class="tile scale-anm 3d all" style="margin-top: -15px;">
+                  <figure class="snip1206">
+                    <img src="images/work/3d/Globaltronicsbooth.jpg" alt=""  />
+                     <figcaption>
+                    <h2>Globaltronics Booth Design</h2>
+                  <p>3D Design</p>
+                  </figcaption></figure>
+                </div>
+
+                 <div class="tile scale-anm 3d all" style="margin-top: -15px;">
+                  <figure class="snip1206">
+                    <img src="images/work/3d/OCAPbooth.jpg" alt=""  />
+                     <figcaption>
+                    <h2>OCAP booth Design</h2>
+                  <p>3D Design</p>
+                  </figcaption></figure>
+                </div>
+
+                 <div class="tile scale-anm 3d all" style="margin-top: -15px;">
+                  <figure class="snip1206">
+                    <img src="images/work/3d/TACBOOTH.jpg" alt=""  />
+                     <figcaption>
+                    <h2>TAC booth Design</h2>
+                  <p>3D Design</p>
+                  </figcaption></figure>
+                </div>
+
+							  <div class="tile scale-anm 3d all"><figure class="snip1206">
+							      <img src="images/work/3d/eventspace.jpg" alt="" /> 
+							       <figcaption>
+    								<h2>Sample Event Space 3D design</h2>
+									<p>3D Design</p>
+									</figcaption></figure> 
+							  </div>
+							  <div class="tile scale-anm 3d all"><figure class="snip1206">
+							      <img src="images/work/3d/globaloffice.jpg" alt="" />
+							      <figcaption>
+    								<h2>Globaltronics HQ front desk</h2>
+									<p>3D Design</p>
+									</figcaption></figure>  
+							  </div>
+							  <div class="tile scale-anm 3d all"><figure class="snip1206">
+							      <img src="images/work/3d/Globe.jpg" alt="" />  
+							      <figcaption>
+    								<h2>Globe</h2>
+									<p>3D Design</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm 3d all"><figure class="snip1206">
+							      <img src="images/work/3d/PARC_OFFICE_Front.jpg" alt="" />  
+							      <figcaption>
+    								<h2>PARC Office</h2>
+									<p>3D Design</p>
+									</figcaption></figure>
+							  </div>
+
+							   <div class="tile scale-anm web all"><figure class="snip1206" style="margin-top: -2px;">
+							      <img src="images/work/web/creatives.JPG"  />  
+							      <figcaption>
+    								<h2>Globaltronics Creatives Website</h2><a href="https://creatives.globaltronics.net/creatives/" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/globaltronics.JPG" alt=""/>  
+							      <figcaption>
+    								<h2>Globaltronics Website</h2><a href="www.globaltronics.net" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+
+
+
+							<div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/ndaa2013.JPG" alt="" />  
+							      <figcaption>
+    								<h2>NDAA 2013</h2><a href="https://ndaa.globaltronics.net/2013/" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+
+							<div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/ndaa2014.JPG" alt="" />  
+							      <figcaption>
+    								<h2>NDAA 2014</h2><a href="https://ndaa.globaltronics.net/2014" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+
+								<div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/ndaa2015.JPG" alt="" />  
+							      <figcaption>
+    								<h2>NDAA 2015</h2><a href="https://ndaa.globaltronics.net/2015" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+
+							<div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/ndaa2017.JPG" alt="" />  
+							      <figcaption>
+    								<h2>NDAA 2017</h2><a href="https://ndaa.globaltronics.net/2017" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+
+							<div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/ocap.JPG" alt="" />  
+							      <figcaption>
+    								<h2>OCAP Website</h2><a href="https://ocap.org.ph/" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/tacphils.JPG" alt="" />  
+							      <figcaption>
+    								<h2>Team Asia</h2><a href="https://www.tacphils.com/" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+							  <div class="tile scale-anm web all"><figure class="snip1206">
+							      <img src="images/work/web/theparc.JPG" alt="" />  
+							      <figcaption>
+    								<h2>The PARC Foundation</h2><a href="http://www.theparcfoundation.ph/" target="_blank"></a>
+									<p>Web Design</p>
+									</figcaption></figure>
+							  </div>
+
+
+
+							</div>
+
+
+						
+
+
+
+                </div> <!-- end masonry -->
+            </div> <!-- end col-full -->
+        </div> <!-- end works-content -->
+
+    </section> <!-- end s-works -->
+
+
+    <!-- clients
+    ================================================== -->
+    <section id="clients" class="s-clients">
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Our Clients</h3>
+                <h1 class="display-2">Globaltronics Creatives has been honored to
+                partner up with these clients</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row clients-outer" data-aos="fade-up">
+            <div class="col-full">
+                <div class="clients">
+                    
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l1.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l2.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l3.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l4.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l5.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l6.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l7.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l8.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l9.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l10.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l11.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l12.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l13.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l14.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l15.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l16.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l17.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l18.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l19.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l20.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l21.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l22.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l23.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l24.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l25.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l26.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l27.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l28.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l29.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l30.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l31.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l32.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l33.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l34.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l35.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l36.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l37.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l38.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l39.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l40.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l41.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l42.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l43.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l44.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l45.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l46.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l47.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l48.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l49.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l50.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l51.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l52.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l53.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l54.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l55.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l56.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l57.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l58.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/clients/l59.png" /></a>
+
+                </div> <!-- end clients -->
+            </div> <!-- end col-full -->
+        </div> <!-- end clients-outer -->
+
+        <div class="row clients-testimonials" data-aos="fade-up">
+            <div class="col-full">
+
+            	 <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                
+                <h1 class="display-2">The Creatives Team</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+                <div id="container">
+
+                	 <div class="photobanner">
+    	
+						<img class="first" src="images/jing.gif">
+						<img src="images/tian.gif">
+
+						<img src="images/lej.gif">
+
+						<img src="images/chris.gif">
+
+						<img src="images/lee.gif">
+
+						<img src="images/gelo.gif">
+
+						<img src="images/paul.gif">
+
+						<img src="images/jm.gif">
+
+						<img src="images/jing.gif">
+						<img src="images/tian.gif">
+
+						<img src="images/lej.gif">
+
+						<img src="images/chris.gif">
+
+						<img src="images/lee.gif">
+
+						<img src="images/gelo.gif">
+
+						<img src="images/paul.gif">
+
+						<img src="images/jm.gif">
+
+						<img src="images/jing.gif">
+						<img src="images/tian.gif">
+
+						<img src="images/lej.gif">
+
+						<img src="images/chris.gif">
+
+						<img src="images/lee.gif">
+
+						<img src="images/gelo.gif">
+
+						<img src="images/paul.gif">
+
+						<img src="images/jm.gif">
+    
+
+
+
+    	  </div>
+
+                </div><!-- end testimonials -->
+                
+            </div> <!-- end col-full -->
+        </div> <!-- end client-testimonials -->
+
+    </section> <!-- end s-clients -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact">
+
+        <div class="overlay"></div>
+        <!--<div class="contact__line"></div>-->
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Contact Us</h3>
+                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
+            </div>
+        </div>
+
+        <div class="row contact-content" data-aos="fade-up">
+            
+            <div class="contact-primary">
+
+                <h3 class="h6">Send Us A Message</h3>
+
+                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                    <fieldset>
+    
+                    <div class="form-field">
+                        <input name="contactName" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Submit</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    </fieldset>
+                </form>
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div> 
+            
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+
+            </div> <!-- end contact-primary -->
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                    <div class="cinfo">
+                        <h5>Where to Find Us</h5>
+                        <p>
+                            Globaltronics Building<br>
+                            349 Ortigas Avenue, <br>
+                            Wack-Wack Greenhills East, <br>
+                            Mandaluyong City, Metro Manila, <br>
+                            Philippines, 1554
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Email Us At</h5>
+                        <p>
+                            creatives@globaltronics.net
+                            
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Call Us At</h5>
+                        <p>
+                            Phone: (632) 8721-2878<br>
+                       
+                        </p>
+                    </div>
+
+                    <!--<ul class="contact-social">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+                        </li>
+                    </ul> <!-- end contact-social -->
+
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+
+<!-- Modal motion graphics -->
+<div class="modal" id="modal-name">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>NDAA 2014 (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe title="vimeo-player" src="https://player.vimeo.com/video/99320949" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+<div class="modal" id="modal-name1">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>National Digital Arts Awards 2015: #DIGITALPINOYAKO (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/128466862" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-name2">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>EASTER SUNDAY (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/160715331" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+<div class="modal" id="modal-name3">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>NEW YEAR GREETING (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/83197140" width="640" height="240" frameborder="0" allowfullscreen></iframe></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+<div class="modal" id="modal-name4">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>EASTER SUNDAY (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/160715331" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+
+<!--modal flash-->
+
+<div class="modal" id="modal-nametanduay-none">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>TANDUAY (Flash Application)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="images/work/flash/tanduay.jpg" width="100%" height="100%" frameborder="0"></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-name2">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>EASTER SUNDAY (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/160715331" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+<div class="modal" id="modal-name2">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>EASTER SUNDAY (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/160715331" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+<div class="modal" id="modal-name2">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>EASTER SUNDAY (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/160715331" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+<div class="modal" id="modal-name2">
+  <div class="modal-sandbox">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="close-modal">&#10006;</div> 
+      <center><h1>EASTER SUNDAY (Motion Graphics)</h1></center>
+    </div>
+    <div class="modal-body">
+     <center><iframe src="https://player.vimeo.com/video/160715331" width="640" height="360" frameborder="0" allowfullscreen></iframe></center>
+      <br />
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            
+
+            <div class="col-six tab-full left footer-subscribe">
+
+                <h4>Get Notified</h4>
+                <p>Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</p>
+
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" novalidate="true">
+                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                        <input type="submit" name="subscribe" value="Subscribe">
+                        <label for="mc-email" class="subscribe-message"></label>
+                    </form>
+                </div>
+
+                 <div class="pull-left">
+                        <h4 class="text-white">Copyright &copy; 2003-2021. Globaltronics. All Rights Reserved</h4>     
+               </div>
+
+            </div>
+
+        </div> <!-- end footer-main -->
+
+      
+    </footer> <!-- end footer -->
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div> <!-- end photoSwipe background -->
+ 
+  
+
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+  	
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>   var i = 0,
+    $body = $( "body" );
+$( window ).mousemove(function( event ) {
+  if (i > 200) {
+    $( '#F' + (i-200) ).remove();
+  }
+    $body.append( '<div id="F'+ i +'" class="flicker"></div>' );
+  $( '#F'+i ).css( {
+    'top': event.pageY, 
+    'left': event.pageX
+  } );
+  i++;
+});
+</script>
+
+<script>
+	$(function() {
+		var selectedClass = "";
+		$(".fil-cat").click(function(){ 
+		selectedClass = $(this).attr("data-rel"); 
+     $("#portfolio").fadeTo(100, 0.1);
+		$("#portfolio div").not("."+selectedClass).fadeOut().removeClass('scale-anm');
+    setTimeout(function() {
+      $("."+selectedClass).fadeIn().addClass('scale-anm');
+      $("#portfolio").fadeTo(300, 1);
+    }, 300); 
+		
+	});
+});
+</script>
+
+<script>
+	 $(".hover").mouseleave(
+    function () {
+      $(this).removeClass("hover");
+    }
+  );
+</script>
+
+<script>
+	var btn = $('#button.a');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+</script>
+
+<script>
+
+
+$(".modal-trigger").click(function(e){
+  e.preventDefault();
+  dataModal = $(this).attr("data-modal");
+  $("#" + dataModal).css({"display":"block"});
+  // $("body").css({"overflow-y": "hidden"}); //Prevent double scrollbar.
+});
+
+$(".close-modal, .modal-sandbox").click(function(){
+  $(".modal").css({"display":"none"});
+  // $("body").css({"overflow-y": "auto"}); //Prevent double scrollbar.
+});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
