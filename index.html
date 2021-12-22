@@ -1832,7 +1832,7 @@ div a:hover {
 
                 <h3 class="h6">Send Us A Message</h3>
 
-                <form action="https://formsubmit.co/jimmel.bermudez@globaltronics.net" name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                <form action="https://formsubmit.co/jimmel.bermudez@globaltronics.net" name="contactForm" id="contactForm" method="POST" novalidate="novalidate">
                     <fieldset>
     
                     <div class="form-field">
@@ -1848,7 +1848,7 @@ div a:hover {
                         <textarea name="message" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                     </div>
                     <div class="form-field">
-                        <button class="full-width btn--primary">Submit</button>
+                        <button class="full-width btn--primary" type="submit">Submit</button>
                         <div class="submit-loader">
                             <div class="text-loader">Sending...</div>
                             <div class="s-loader">
@@ -1865,15 +1865,7 @@ div a:hover {
                     </fieldset>
                 </form>
 
-                <!-- contact-warning -->
-                <div class="message-warning">
-                    Something went wrong. Please try again.
-                </div> 
-            
-                <!-- contact-success -->
-                <div class="message-success">
-                    Your message was sent, thank you!<br>
-                </div>
+               
 
             </div> <!-- end contact-primary -->
 
