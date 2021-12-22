@@ -2179,62 +2179,7 @@ div a:hover {
   	
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script>   var i = 0,
-    $body = $( "body" );
-$( window ).mousemove(function( event ) {
-  if (i > 200) {
-    $( '#F' + (i-200) ).remove();
-  }
-    $body.append( '<div id="F'+ i +'" class="flicker"></div>' );
-  $( '#F'+i ).css( {
-    'top': event.pageY, 
-    'left': event.pageX
-  } );
-  i++;
-});
-</script>
-
-<script>
-	$(function() {
-		var selectedClass = "";
-		$(".fil-cat").click(function(){ 
-		selectedClass = $(this).attr("data-rel"); 
-     $("#portfolio").fadeTo(100, 0.1);
-		$("#portfolio div").not("."+selectedClass).fadeOut().removeClass('scale-anm');
-    setTimeout(function() {
-      $("."+selectedClass).fadeIn().addClass('scale-anm');
-      $("#portfolio").fadeTo(300, 1);
-    }, 300); 
-		
-	});
-});
-</script>
-
-<script>
-	 $(".hover").mouseleave(
-    function () {
-      $(this).removeClass("hover");
-    }
-  );
-</script>
-
-<script>
-	var btn = $('#button.a');
-
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
-});
-
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});
-
-</script>
+   
 
 <script>
 
